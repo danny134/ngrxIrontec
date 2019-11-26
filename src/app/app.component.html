@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <h2>
+      Lista de issues
+    </h2>
+
+    <ul>
+      <li *ngFor="let issue of issuesItems | async">
+        <h4>{{ issue.title }} </h4>
+        <p>{{ issue.body }} </p>
+      </li>
+    </ul>
+  </div>
+</div>
