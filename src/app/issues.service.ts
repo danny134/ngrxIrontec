@@ -7,11 +7,11 @@ import { IssueItem } from './store/models/issues-item.model';
 })
 export class IssuesService {
 
-  private ISSUES_URL = "https://api.github.com/repos/ionic-team/capacitor/issues";
   constructor(private http: HttpClient) { }
 
-  getIssueItems() {
-    return this.http.get<Array<IssueItem>>(this.ISSUES_URL)
+  getIssueItems(url:string) {
+    return this.http.get<Array<IssueItem>>(url);
       
   }
+
 }

@@ -13,12 +13,13 @@ export class IssueEffects {
     .pipe(
       ofType<LoadISSUESAction>(IssueActionTypes.LOAD_ISSUES),
       mergeMap(
-        () => this.issuesService.getIssueItems()
+        (action) => this.issuesService.getIssueItems(action.url)
           .pipe(
             map(data => {
               return new LoadISSUESSuccessAction(data)
             }),
             catchError(error => of(new LoadISSUESFailureAction(error)))
+
           )
       ),
     )
@@ -27,5 +28,6 @@ export class IssueEffects {
   constructor(
     private actions$: Actions,
     private issuesService: IssuesService
-  ) { }
+  ) { 
+  }
 }

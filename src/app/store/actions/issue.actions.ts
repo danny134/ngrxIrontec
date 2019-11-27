@@ -10,6 +10,8 @@ export enum IssueActionTypes {
 
 export class LoadISSUESAction implements Action {
   readonly type = IssueActionTypes.LOAD_ISSUES
+
+  constructor(public url:string){}
 }
 export class LoadISSUESSuccessAction implements Action {
   readonly type = IssueActionTypes.LOAD_ISSUES_SUCCESS

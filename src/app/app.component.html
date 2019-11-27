@@ -3,7 +3,10 @@
     <h2>
       Lista de issues
     </h2>
-
+    <form (submit)="onSubmit()">
+      <input [(ngModel)]="url" name="something" style="width: 50%;">
+   </form>
+   <button (click)="cli()" >Enter</button>
     <ul>
       <li *ngFor="let issue of issuesItems | async">
         <h4>{{ issue.title }} </h4>
